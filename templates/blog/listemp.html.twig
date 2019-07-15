@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Employes{% endblock %}
+
+{% block body %}
+<p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">La liste des etudiants repartie en fonction du service:</font></font></p> <br>
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Matricule</th>
+            <th scope="col">Nom Complet</th>
+            <th scope="col">Date de Naissance</th>
+            <th scope="col">Salaire</th>
+            <th scope="col">Service</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody> 
+          {% for emp in emps %}
+          <tr class="table-active">
+            <th scope="row">{{ emp.matricule }}</th>
+            <td>{{ emp.nomcomplet }}</td>
+            <td>{{ emp.datenaissance | date('d/m/Y') }}</td>
+            <td>{{ emp.salaire }}</td>
+            <td>{{ emp.service.libelle }}</td>
+            <td><button type="button" name="modifier" class="btn btn-info" link="">Modifier</button></td>
+            <td> <button type="button" name="supprimer" class="btn btn-danger" link="">Supprimer</button></td>
+      
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table> 
+ 
+      {% endblock %}

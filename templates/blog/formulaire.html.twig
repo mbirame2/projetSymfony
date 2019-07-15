@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{%  form_theme formEmploye 'bootstrap_4_layout.html.twig'%}
+
+{% block title %}Formulaire!{% endblock %}
+
+{% block body %}
+
+<h6>Enregistrer un Employé </h6> <br> <br>
+{{ form_start(formEmploye) }}
+      
+          {{ form_row(formEmploye.matricule, {'attr' : {'placeholder' : "Entrer le matricule"}}) }}
+          {{ form_row(formEmploye.nomcomplet, {'attr' : {'placeholder' : "Entrer le nom complet"}}) }}
+          {{ form_row(formEmploye.datenaissance, {'attr' : {'placeholder' : "Entrer "}}) }}
+          {{ form_row(formEmploye.service, {'attr' : {'placeholder' : "Entrer le matricule"}}) }}
+          {{ form_row(formEmploye.salaire, {'attr' : {'placeholder' : "Entrer le salaire"}}) }}
+    <button type="submit" class="btn btn-success">  Ajouter un employe</button>
+
+    {{ form_end(formEmploye) }}
+
+{% endblock %}
