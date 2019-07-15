@@ -24,8 +24,8 @@
             <td>{{ emp.datenaissance | date('d/m/Y') }}</td>
             <td>{{ emp.salaire }}</td>
             <td>{{ emp.service.libelle }}</td>
-            <td><button type="button" name="modifier" class="btn btn-info" link="">Modifier</button></td>
-            <td> <button type="button" name="supprimer" class="btn btn-danger" link="">Supprimer</button></td>
+            <td><button type="button" name="modifier" class="btn btn-info" link=""><a href="{{path('blog_create',{'id':emp.id}) }}">Modifier</a></button></td>
+            <td> <button type="button" name="supprimer" class="btn btn-danger" link=""> <a href="{{path('supempl',{'id':emp.id}) }}"> Supprimer</a></button></td>
       
           </tr>
           {% endfor %}
